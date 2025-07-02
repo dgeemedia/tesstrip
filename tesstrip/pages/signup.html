@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sign Up - TessTrip</title>
+  <link rel="stylesheet" href="/styles/global.css" />
+  <link rel="manifest" href="/manifest.json" />
+  <meta name="theme-color" content="#006400" />
+</head>
+<body>
+  <section class="hero">
+    <h1>Create Your TessTrip Account</h1>
+    <p>Start planning and tracking your dream vacation today.</p>
+  </section>
+
+  <section style="max-width: 500px; margin: auto; padding: 2rem;">
+    <form>
+      <label>Full Name / Business Name:
+        <input type="text" id="name" required />
+      </label>
+      <label>Email Address:
+        <input type="email" id="email" required />
+      </label>
+      <label>Phone Number:
+        <input type="tel" id="phone" required pattern="[0-9]{11}" title="Enter 11-digit phone number"/>
+      </label>
+      <label>Password:
+        <input type="password" id="password" required minlength="6" />
+      </label>
+      <label>Confirm Password:
+        <input type="password" id="confirmPassword" required />
+      </label>
+      <button type="submit">Sign Up</button>
+
+      <div id="loader" style="display: none; text-align: center; margin-top: 1.5rem;">
+        <div class="spinner"></div>
+        <p id="loaderMsg" style="font-weight: bold; color: #007e33;">
+          Creating your TessTrip account<span>.</span><span>.</span><span>.</span>
+        </p>
+      </div>
+    </form>
+
+    <p style="text-align:center; margin-top:1rem;">
+      Already have an account? <a href="login.html">Log in</a>
+    </p>
+  </section>
+
+  <script type="module" src="/src/auth/signup.js"></script>
+  <script src="https://checkout.flutterwave.com/v3.js"></script>
+</body>
+</html>

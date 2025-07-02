@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TessTrip - Escape. Connect. Grow.</title>
+</head>
+<body>
+
+  <!-- 🔹 Hero Section -->
+  <header class="hero">
+    <h1>TessTrip Travel & Tour</h1>
+    <p>Quarterly vacations for professionals and business owners across Nigeria & West Africa.</p>
+    <button id="openPlanner">Plan My Vacation</button>
+  </header>
+
+  <!-- 🔹 TessTrip Smart Weather -->
+  <section class="weather-section">
+    <h2>🌤 Smart Weather for Travelers</h2>
+    <div class="weather-cards">
+      <div class="card weather">
+        <h3>Current Weather</h3>
+        <div class="weather-now">
+          <img id="graphic" src="#" alt="weather icon" class="weather-icon" />
+          <div class="weather-info">
+            <p><strong>Temperature:</strong> <span id="temperature">--</span></p>
+            <p><strong>Condition:</strong> <span id="description">--</span></p>
+          </div>
+        </div>
+      </div>
+      <div class="card forecast">
+        <h3>3-Day Forecast</h3>
+        <ul id="forecast"></ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- 🔹 Dynamic Featured Vacation Section -->
+  <section class="vacation-highlight">
+    <h2>Featured Vacation Experience</h2>
+    <div id="featuredVacation" class="featured-card"></div>
+  </section>
+
+  <!-- 🔹 Realtime Trip Booking Tracker -->
+  <section class="booking-tracker">
+    <h2>🎯 Upcoming Group Vacation</h2>
+    <div class="trip-card">
+      <h3 id="tripTitle">Ghana Beach Retreat (August 2025)</h3>
+      <p><strong>Slots Available:</strong> <span id="slotsLeft">Loading...</span> / 30</p>
+      <button id="bookNowBtn">Book Your Spot</button>
+    </div>
+  </section>
+
+  <!-- 🔹 Book a Special Experience -->
+  <section class="special-events">
+    <h2>Book a Special Experience</h2>
+    <p>Whether you're planning a business retreat, a honeymoon, or a corporate getaway, TessTrip helps you make it memorable.</p>
+    <button onclick="document.getElementById('bookModal').style.display='flex'">Book Now</button>
+  </section>
+
+  <!-- 🔹 Vacation Planner & GERMbox -->
+  <section class="planner-section">
+    <h2>Plan Your Vacation & Discover Trade Options</h2>
+    <div class="planner-container">
+      <div class="planner-form">
+        <label>Destination: <input type="text" placeholder="e.g., Accra, Ghana" /></label>
+        <label>Travel Date: <input type="date" /></label>
+        <label>Budget (₦): <input type="number" /></label>
+        <button onclick="savePlan()">Save this Plan</button>
+      </div>
+      <div class="planner-info">
+        <p>Looking to grow your wealth while preparing for vacation? Connect your plan to trade options with <strong>GERMbox</strong> and partner fintechs.</p>
+        <a href="#" class="btn-secondary">Explore GERMbox Finance</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 🔹 Past Event Gallery -->
+  <section class="photo-gallery">
+    <h2>Past TessTrip Events</h2>
+    <div class="gallery-scroll" id="galleryScroll">
+      <img src="/images/placeholder.png" alt="Lekki Retreat" />
+      <img src="/images/placeholder.png" alt="Obudu Hangout" />
+      <img src="/images/placeholder.png" alt="Cotonou Escape" />
+      <img src="/images/placeholder.png" alt="Ghana Beach Trip" />
+    </div>
+  </section>
+
+  <!-- 🔹 Host Invitation -->
+  <section class="host-section">
+    <h2>Host with TessTrip</h2>
+    <p>Own a beach house, resort, or unique event space? Join our host directory today. Our team will review and onboard you to future quarterly retreats.</p>
+    <a href="host-register.html" class="btn">Register Your Property</a>
+  </section>
+
+  <!-- 🔹 Business Ad Ticker -->
+  <section class="ad-ticker">
+    <h2>Featured Partners</h2>
+    <div class="ticker-container" id="adTicker">
+      <div class="ticker-content">
+        <div class="ad-box">
+          <img src="/images/placeholder.png" alt="Partner A" />
+          <p><strong>GERMbox</strong><br>
+            📞 <a href="tel:08087654321">08087654321</a><br>
+            📧 <a href="mailto:jenspa@yahoo.com">jenspa@yahoo.com</a><br>
+            🌐 <a href="https://www.edutechnetwork.com" target="_blank">www.edutechnetwork.com</a></p>
+        </div>
+        <!-- Repeat ad-box as needed -->
+      </div>
+    </div>
+  </section>
+
+  <!-- 🔹 Booking Modal -->
+  <div id="bookModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="document.getElementById('bookModal').style.display='none'">&times;</span>
+      <h2>Request an Event Booking</h2>
+      <form onsubmit="handleBooking(event)">
+        <label>Name / Business: <input type="text" id="bookName" required /></label>
+        <label>Email: <input type="email" id="bookEmail" required /></label>
+        <label>Preferred Date: <input type="date" id="bookDate" required /></label>
+        <label>Event Type:
+          <select id="eventType">
+            <option>Business Retreat</option>
+            <option>Business Seminar</option>
+            <option>Couple's Hangout</option>
+            <option>Corporate Event</option>
+            <option>Wedding Ceremony/Anniversary</option>
+            <option>Graduation</option>
+            <option>Honeymoon</option>
+          </select>
+        </label>
+        <button type="submit">Submit Request</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- 🔹 Vacation Planner Modal -->
+  <div id="plannerModal" class="modal">
+    <div class="modal-content">
+      <span class="close" id="closeModal">&times;</span>
+      <h2>Quick Vacation Planner</h2>
+      <label>Monthly Income (₦): <input type="number" id="income" /></label>
+      <label>Trip Cost (₦): <input type="number" id="tripCost" /></label>
+      <label>Months to Save: <input type="number" id="months" /></label>
+      <button onclick="calculatePlan()">Calculate</button>
+      <div id="output"></div>
+    </div>
+  </div>
+
+  <!-- 🔹 Footer -->
+  <footer>
+    <div class="footer-content">
+      <p>&copy; 2025 TessTrip Travel & Tour. All rights reserved.</p>
+      <nav>
+        <a href="signup.html">Sign Up</a> |
+        <a href="contact.html">Contact</a> |
+        <a href="#">Privacy Policy</a>
+      </nav>
+    </div>
+  </footer>
+
+  <!-- ✅ Load Main App Script -->
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>

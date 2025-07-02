@@ -1,0 +1,576 @@
+/* ==================== 🌐 GLOBAL RESET ==================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: #f4f7f9;
+  color: #222;
+  line-height: 1.6;
+  padding-bottom: 3rem;
+}
+
+/* ==================== 🔹 HERO SECTION ==================== */
+.hero {
+  background: linear-gradient(to right, #1e3c72, #2a5298);
+  color: white;
+  text-align: center;
+  padding: 4rem 1rem;
+}
+.hero h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+.hero p {
+  font-size: 1.2rem;
+}
+.hero button {
+  background: #ffc107;
+  color: #000;
+  border: none;
+  padding: 0.75rem 2rem;
+  margin-top: 1.5rem;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+/* ==================== 🔹 WEATHER ==================== */
+.weather-section {
+  background: #f0f9ff;
+  padding: 2rem;
+  border-top: 4px solid #007b8a;
+  border-bottom: 4px solid #007b8a;
+  text-align: center;
+}
+
+.weather-section h2 {
+  margin-bottom: 1rem;
+  color: #004c57;
+  font-size: 1.8rem;
+}
+
+.weather-cards {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.card.weather,
+.card.forecast {
+  background-color: white;
+  padding: 1.5rem;
+  border-radius: 10px;
+  width: 300px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.weather-icon {
+  width: 70px;
+  height: 70px;
+}
+
+.weather-info p {
+  margin: 0.4rem 0;
+}
+
+.forecast ul {
+  list-style: none;
+  padding: 0;
+  text-align: left;
+}
+
+.forecast li {
+  margin: 0.5rem 0;
+  font-size: 0.95rem;
+}
+
+/* ==================== 🔹 VACATION EVENTS SECTION ==================== */
+/* 🔹 Streamlined Vacation Highlight */
+.vacation-highlight {
+  background: #e8f5e9;
+  border-radius: 8px;
+  padding: 2rem 1rem;
+  text-align: center;
+}
+.featured-card {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  align-items: center;
+  justify-content: center;
+}
+.featured-card img {
+  width: 100%;
+  max-width: 400px;
+  border-radius: 10px;
+  object-fit: cover;
+}
+.featured-info {
+  max-width: 500px;
+}
+.featured-info h3 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+.featured-info p {
+  font-size: 1rem;
+  color: #444;
+  margin-bottom: 1rem;
+}
+.featured-info button {
+  background: #00796b;
+  color: white;
+  border: none;
+  padding: 0.75rem 2rem;
+  font-size: 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* ==================== 🔹 REALTIME BOOKING SECTION ==================== */
+.booking-tracker {
+  padding: 2rem;
+  background: #f7faff;
+  border-top: 2px solid #cce5ff;
+  text-align: center;
+}
+
+.booking-tracker .trip-card {
+  display: inline-block;
+  background: #ffffff;
+  border: 1px solid #d1ecf1;
+  padding: 1.5rem 2rem;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.05);
+}
+
+.booking-tracker h3 {
+  color: #007bff;
+  font-size: 1.5rem;
+}
+
+#bookNowBtn {
+  margin-top: 1rem;
+  background-color: #28a745;
+  color: #fff;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background 0.3s ease;
+}
+
+#bookNowBtn:hover {
+  background-color: #218838;
+}
+
+
+/* ==================== 🔹 BOOK A SPECIAL EXPERIENCE SECTION ==================== */
+.special-events {
+  background: #fce4ec;
+  padding: 2rem 1rem;
+  text-align: center;
+  border-radius: 8px;
+  margin-top: 2rem;
+}
+.special-events h2 {
+  font-size: 1.6rem;
+  color: #c2185b;
+  margin-bottom: 0.5rem;
+}
+.special-events p {
+  color: #555;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+.special-events button {
+  background: #e91e63;
+  color: white;
+  border: none;
+  padding: 0.8rem 2rem;
+  font-size: 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+.special-events button:hover {
+  background: #c2185b;
+}
+
+/* ==================== 🔹 VACATION PLANNER SECTION ==================== */
+.planner-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+.planner-form, .planner-info {
+  flex: 1 1 300px;
+}
+.planner-form input {
+  display: block;
+  width: 100%;
+  padding: 0.5rem;
+  margin: 0.5rem 0 1rem;
+}
+.planner-form button {
+  padding: 0.7rem 1.5rem;
+  background: #28a745;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.planner-info {
+  background: #e0f7fa;
+  padding: 1rem;
+  border-left: 4px solid #00796b;
+}
+.btn-secondary {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.6rem 1rem;
+  background: #00796b;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 4px;
+}
+
+/* ==================== 🔹 GALLERY SECTION ==================== */
+.gallery-scroll {
+  display: flex;
+  overflow-x: auto;
+  gap: 1rem;
+}
+.gallery-scroll img {
+  height: 180px;
+  width: auto;
+  border-radius: 8px;
+}
+
+/* ==================== 🔹 HOST SECTION ==================== */
+.host-section {
+  background: #fff9c4;
+  text-align: center;
+  padding: 2rem 1rem;
+}
+.host-section .btn {
+  background: #ff9800;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  text-decoration: none;
+  border-radius: 4px;
+  display: inline-block;
+  margin-top: 1rem;
+}
+
+/* ==================== 🔹 AD TICKER SECTION ==================== */
+.ticker-container {
+  overflow-x: auto;
+  white-space: nowrap;
+  background: #e3f2fd;
+  padding: 1rem 0;
+}
+.ticker-content {
+  display: inline-flex;
+  gap: 2rem;
+  padding-left: 1rem;
+}
+.ad-box {
+  min-width: 200px;
+  background: white;
+  padding: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+.ad-box img {
+  width: 100%;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 4px;
+  margin-bottom: 0.5rem;
+}
+
+/* ==================== 🔹 MODALS (Booking + Planner) ==================== */
+.modal {
+  display: none;
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  justify-content: center;
+  align-items: center;
+}
+.modal-content {
+  background: white;
+  padding: 2rem;
+  width: 90%;
+  max-width: 500px;
+  border-radius: 8px;
+  position: relative;
+}
+.modal-content input {
+  width: 100%;
+  margin-bottom: 1rem;
+  padding: 0.5rem;
+}
+.modal-content button {
+  background: #1976d2;
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 4px;
+}
+.close {
+  position: absolute;
+  top: 10px; right: 20px;
+  font-size: 1.5rem;
+  color: #444;
+  cursor: pointer;
+}
+
+/* ==================== 🔹 FOOTER ==================== */
+footer {
+  background: #263238;
+  color: white;
+  padding: 1.5rem 1rem;
+  text-align: center;
+  position: relative;
+  margin-top: 3rem;
+}
+footer nav a {
+  color: #bbdefb;
+  margin: 0 0.5rem;
+  text-decoration: none;
+}
+footer nav a:hover {
+  text-decoration: underline;
+}
+
+
+
+
+
+
+
+
+
+
+/* FORM */
+/* Auth Forms */
+form {
+  background: #ffffff;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+form label {
+  display: block;
+  margin-bottom: 1rem;
+  font-weight: 600;
+  color: #333;
+}
+
+form input {
+  width: 100%;
+  padding: 0.7rem;
+  margin-top: 0.3rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  transition: border-color 0.2s ease;
+}
+
+form input:focus {
+  border-color: #00796b;
+  outline: none;
+}
+
+form button {
+  background: #1e88e5;
+  color: white;
+  border: none;
+  padding: 0.75rem 2rem;
+  font-size: 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+form button:hover {
+  background: #1565c0;
+}
+
+form p {
+  margin-top: 1rem;
+  font-size: 0.95rem;
+}
+
+form a {
+  color: #00796b;
+  text-decoration: none;
+}
+
+form a:hover {
+  text-decoration: underline;
+}
+
+/* DashBoard Tabs */
+/* Tabs */
+.tabs {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+.tab-btn {
+  padding: 0.7rem 1.5rem;
+  background: #ccc;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.tab-btn.active {
+  background: #1e88e5;
+  color: white;
+}
+.tab-content {
+  display: none;
+}
+.tab-content.active {
+  display: block;
+}
+
+/* Journal */
+#journalForm input, #journalForm textarea {
+  display: block;
+  width: 100%;
+  margin-bottom: 1rem;
+  padding: 0.7rem;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+#journalForm button {
+  background: #43a047;
+  color: white;
+  border: none;
+  padding: 0.75rem 2rem;
+  border-radius: 5px;
+}
+.journal-entry {
+  background: #f9f9f9;
+  border-left: 4px solid #1976d2;
+  padding: 1rem;
+  margin-top: 1rem;
+}
+
+.quick-actions {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-top: 1rem;
+}
+.action-btn {
+  background: #e5f4f9;
+  border: none;
+  padding: 0.8rem 1.2rem;
+  border-radius: 12px;
+  font-weight: bold;
+  cursor: pointer;
+  color: #00778b;
+}
+.trip-planner,
+.passport-reward {
+  background: #f9f9f9;
+  padding: 1.5rem;
+  margin-top: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+.trip-planner label,
+.trip-planner input,
+.trip-planner select {
+  display: block;
+  margin-top: 1rem;
+  width: 100%;
+}
+.search-btn {
+  margin-top: 1.5rem;
+  background: #6a4ff2;
+  color: #fff;
+  border: none;
+  padding: 0.8rem;
+  width: 100%;
+  border-radius: 8px;
+  cursor: pointer;
+}
+.passport-reward {
+  background: #f4f2fe;
+  border-left: 5px solid #6a4ff2;
+}
+
+/* Loader */
+    .spinner {
+      width: 40px;
+      height: 40px;
+      margin: 10px auto;
+      border: 4px solid #ccc;
+      border-top: 4px solid #00a676;
+      border-radius: 50%;
+      animation: spin 0.8s linear infinite;
+    }
+
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+
+    #loader p span {
+      font-weight: bold;
+      animation: blink 1.4s infinite;
+      opacity: 0;
+    }
+
+    #loader p span:nth-child(1) { animation-delay: 0s; }
+    #loader p span:nth-child(2) { animation-delay: 0.2s; }
+    #loader p span:nth-child(3) { animation-delay: 0.4s; }
+
+    @keyframes blink {
+      0%, 100% { opacity: 0; }
+      50% { opacity: 1; }
+    }
+
+    /* Admin Support in Dashboard */
+        .contact-support {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      z-index: 999;
+    }
+    #contactAdminBtn {
+      background: #0066cc;
+      color: #fff;
+      border: none;
+      padding: 0.8rem 1rem;
+      border-radius: 50px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+      cursor: pointer;
+    }
+    .progress-bar {
+      height: 12px;
+      background: #eee;
+      border-radius: 8px;
+      overflow: hidden;
+      margin-top: 0.5rem;
+    }
+    .progress-bar-inner {
+      height: 100%;
+      background: #28a745;
+      width: 0%;
+      transition: width 0.3s;
+    }
+
+

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Login - TessTrip</title>
+  <link rel="stylesheet" href="/styles/global.css" />
+</head>
+<body>
+  <section class="hero">
+    <h1>Login to TessTrip</h1>
+    <p>Access your dashboard and manage your travel plans.</p>
+  </section>
+
+  <section style="max-width: 500px; margin: auto; padding: 2rem;">
+    <form>
+      <label>Email Address:
+        <input type="email" required />
+      </label>
+      <label>Password:
+        <input type="password" required />
+      </label>
+      <label style="display:flex; align-items:center; gap:0.5rem; margin-top:1rem;">
+        <input type="checkbox" id="rememberMe" />
+        Remember Me
+      </label>
+      <button type="submit">Log In</button>
+    </form>
+
+    <p style="text-align:center; margin-top:1rem;">
+      <a href="#" id="resetLink">Forgot Password?</a>
+    </p>
+
+    <p id="resendPrompt" style="display:none; text-align:center; margin-top:1rem;">
+      Didn't get the email? <a href="#" id="resendEmailLink">Resend Verification Email</a>
+    </p>
+    <p id="resendStatus" style="display:none; text-align:center; color: green; margin-top:0.5rem;"></p>
+
+    <p style="text-align:center; margin-top:1rem;">
+      Don’t have an account? <a href="signup.html">Sign up</a>
+    </p>
+  </section>
+
+  <script type="module" src="/src/auth/login.js"></script>
+</body>
+</html>

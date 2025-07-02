@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Dashboard - TessTrip</title>
+  <link rel="stylesheet" href="/styles/global.css" />
+  <link href="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.10/index.global.min.css" rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.10/index.global.min.js"></script>
+  <script src="https://checkout.flutterwave.com/v3.js"></script>
+</head>
+<body>
+  <header class="hero">
+    <h1 id="greeting">Hi Lucky</h1>
+    <p class="subtitle">What do you want to explore?</p>
+    <div class="quick-actions">
+      <button class="action-btn" id="countdownBtn">📅 Vacation Countdown</button>
+      <button class="action-btn">🔄 Travel + Trade Sync</button>
+      <button class="action-btn">📍 Location-Based Ideas</button>
+      <button id="logoutBtn" class="action-btn" style="margin-left:auto;">🚪 Logout</button>
+    </div>
+  </header>
+
+  <main style="padding: 2rem; max-width: 1100px; margin: auto;">
+    <section class="card">
+      <h2>Your Vacation Plans</h2>
+      <table style="width: 100%; border-collapse: collapse;">
+        <thead>
+          <tr style="background: #eee;">
+            <th>Destination</th>
+            <th>Travel Date</th>
+            <th>Budget (₦)</th>
+            <th>Status</th>
+            <th>Payment</th>
+          </tr>
+        </thead>
+        <tbody id="vacationRows"></tbody>
+      </table>
+
+      <h2 style="margin-top: 2rem;">Calendar View</h2>
+      <div id="calendar"></div>
+
+      <div style="background: #fff3cd; padding: 1rem; text-align: center; margin-top: 2rem;">
+        <p>📧 Reminder: 3 Days to Your Dream Vacation — Don’t Miss It!</p>
+      </div>
+    </section>
+
+    <div class="passport-reward card">
+      <h3>📓 TessTrip Passport</h3>
+      <p>Get one free trip after your 4th stamp!</p>
+      <div id="passportProgress" style="margin-top: 0.5rem; font-size: 1.2rem;"></div>
+      <div class="progress-bar"><div class="progress-bar-inner" id="progressBarFill"></div></div>
+    </div>
+
+    <section class="trip-planner card" style="margin-top:2rem;">
+      <h2>🧳 Plan Your Trip</h2>
+      <form id="tripFilterForm">
+        <label>Destination
+          <select>
+            <option>Select</option>
+            <option>Badagry</option>
+            <option>Ghana</option>
+            <option>Togo</option>
+            <option>Cape Verde</option>
+          </select>
+        </label>
+        <label>Date <input type="date" /></label>
+        <label>Vibe
+          <select id="vibeSelect">
+            <option>Select</option>
+            <option>Adventure</option>
+            <option>Relaxation</option>
+            <option>Networking</option>
+          </select>
+        </label>
+        <button type="submit" class="search-btn">Search Trips</button>
+      </form>
+      <div id="tripResults" style="margin-top:1rem;"></div>
+    </section>
+
+    <div class="tabs">
+      <button class="tab-btn active" onclick="showTab('journal')">My Journal</button>
+      <button class="tab-btn" onclick="showTab('itinerary')">Saved Itineraries</button>
+    </div>
+
+    <div id="journal" class="tab-content active">
+      <h2>Trip Journal</h2>
+      <form id="journalForm">
+        <input type="text" placeholder="Trip Title" id="journalTitle" required />
+        <textarea placeholder="Share your experience..." id="journalText" required></textarea>
+        <input type="date" id="journalDate" required />
+        <button type="submit">Save Journal</button>
+      </form>
+      <div id="journalEntries"></div>
+    </div>
+
+    <div id="itinerary" class="tab-content">
+      <h2>Saved Itineraries</h2>
+      <p>(This will pull saved plans from the planner modal on index.html)</p>
+    </div>
+  </main>
+
+  <div class="contact-support">
+    <button id="contactAdminBtn">💬 Chat with Admin</button>
+  </div>
+
+  <script type="module" src="/src/dashboard.js"></script>
+</body>
+</html>
