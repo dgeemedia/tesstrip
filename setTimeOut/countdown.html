@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Simple Countdown</title>
+</head>
+<body>
+
+  <h1 id="countdown">10</h1>
+  <button id="startButton">Start</button>
+
+  <script>
+    const countdownDisplay = document.getElementById('countdown');
+    const startButton = document.getElementById('startButton');
+
+    let timeLeft = 10;
+
+    startButton.addEventListener('click', () => {
+      const intervalId = setInterval(() => {
+        if (timeLeft >= 0) {
+          countdownDisplay.textContent = timeLeft;
+          timeLeft--;
+        } else {
+          clearInterval(intervalId);
+          countdownDisplay.textContent = "Time's up!";
+        }
+      }, 1000); 
+    });
+  </script>
+
+</body>
+</html>

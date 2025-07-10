@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validation API</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+   <h1>Validation API</h1>
+<form>
+  <label for="code">Enter Code: </label>
+  <input type="password" id="code" required pattern="^(?=(?:[^A-Z]*[A-Z]){1}[^A-Z]*$)(?=(?:\D*\d){2}\D*$)[A-Za-z\d]{6,}$">
+  <button type="button">Check Code</button>
+</form>
+<div id="message"></div>
+<div id="description">
+  <ul>
+
+    <li>A valid input
+      <ol class="check">
+        <li>contains 1 uppercase letter</li>
+        <li>is exactly 2 digits</li>
+        <li>has at least six characters</li>
+        <li>has only letters and digits</li>
+      </ol>
+    </li>
+    <li>CSS :valid & :invalid pseudo-classes <br><em>&mdash; input background-color turns green when valid entry is detected</em></li>
+    <li>The browser's native Constraint Validation API tool tip popup is being prevented
+      <br><em>&mdash; this is because the "Check Code" button has type="button" versus type="submit" or the default</em>
+    </li>
+  </ul>
+</div>
+
+<script src="js/javascript.js"></script>
+</body>
+</html>

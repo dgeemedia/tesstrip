@@ -1,0 +1,42 @@
+body {
+  font-family: Consolas, sans-serif;
+}
+
+h1 {
+  font-family: Acme, sans-serif;
+}
+
+input,
+button {
+  padding: 0.5rem;
+}
+
+input:valid {
+  background-color: #e5ffe5;
+}
+
+input:invalid {
+  background-color: #ffffe0;
+}
+
+div {
+  margin: 1rem;
+  border: 1px solid rgb(0 0 0 / 10%);
+  padding: 0.5rem;
+}
+
+#message {
+  background-color: #bed;
+  visibility: hidden;
+}
+
+#description {
+  background-color: #ddd;
+}
+
+.check {
+  list-style: "✓ ";
+}
+
+em {color: green;}
+
